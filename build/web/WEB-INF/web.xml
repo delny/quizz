@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+	<servlet-name>Validate</servlet-name>
+	<servlet-class>quizz.Validate</servlet-class>
+	<multipart-config>
+		<location>c:/Users/a.delgado/Documents/NetBeansProjects/quizz/web/tmp</location>
+		<max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+		<max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+		<file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+	</multipart-config>
+    </servlet>
+    <servlet>
+	<servlet-name>Download</servlet-name>
+	<servlet-class>quizz.Download</servlet-class>
+	<init-param>
+		<param-name>chemin</param-name> 
+		<param-value>c:/Users/a.delgado/Documents/NetBeansProjects/quizz/web/tmp</param-value> 
+	</init-param>
+    </servlet>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
